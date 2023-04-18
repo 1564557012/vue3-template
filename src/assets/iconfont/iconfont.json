@@ -1,0 +1,23 @@
+{
+  "id": "3818608",
+  "name": "后台管理模板",
+  "font_family": "iconfont",
+  "css_prefix_text": "bcs-",
+  "description": "后台管理模板",
+  "glyphs": [
+    {
+      "icon_id": "1275453",
+      "name": "任务",
+      "font_class": "renwu",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    },
+    {
+      "icon_id": "1305337",
+      "name": "首页",
+      "font_class": "shouye",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    }
+  ]
+}
