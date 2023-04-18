@@ -125,10 +125,10 @@ const NowTime = useDateFormat(useNow(), "YYYY-MM-DD HH:mm:ss ");
             <icon name="bcs-renwu" />
         </el-icon>
         <el-icon :size="60" >
-            <icon name="empty.png" />
+            <icon name="empty.png" tooltip="这是提示文字" effect="light"/>
         </el-icon>
-        <el-icon>
-            <icon name="speed.png" />
+        <el-icon :size="22">
+            <icon name="speed.png"  tooltip="121212"/>
         </el-icon>
     </p>
     <p>

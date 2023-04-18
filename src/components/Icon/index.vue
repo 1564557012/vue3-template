@@ -1,17 +1,21 @@
 <script setup lang='ts'>
+
 import { computed } from 'vue'
-// import '@/assets/iocnfont/images/empty.png'
+
+
 const props = defineProps({
   name: {
     type: String,
     required: true
   },
+  tooltip: {
+    type: String,
+    required: false
+  }
 })
 const isImage = computed(() => {
   return props.name.includes('.')
 })
-console.log(isImage.value);
-
 // 图标在 iconfont 中的名字
 const getIconName = computed(() => {
   if (isImage.value) {
@@ -24,10 +28,18 @@ const getIconName = computed(() => {
 
 </script>
 <template>
-  <img class="img-icon" :src="getIconName" alt="" v-if="isImage">
-  <svg class="svg-icon" aria-hidden="true" v-else="isImage">
-    <use :xlink:href="getIconName" />
-  </svg>
+  <template v-if="!props.tooltip">
+    <img class="img-icon" :src="getIconName" alt="" v-if="isImage">
+    <svg class="svg-icon" aria-hidden="true" v-else="isImage">
+      <use :xlink:href="getIconName" />
+    </svg>
+  </template>
+  <el-tooltip :content="tooltip" v-bind="$attrs" v-else>
+    <img class="img-icon" :src="getIconName" alt="" v-if="isImage">
+    <svg class="svg-icon" aria-hidden="true" v-else="isImage">
+      <use :xlink:href="getIconName" />
+    </svg>
+  </el-tooltip>
 </template>
 
 <style scoped lang='scss'>
@@ -38,9 +50,11 @@ const getIconName = computed(() => {
   fill: currentColor;
   vertical-align: -2px;
 }
-.img-icon{
-  width: 100%;
-  height: 100%;
-}
 
+.img-icon {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
 </style>
