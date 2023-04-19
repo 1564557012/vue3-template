@@ -16,14 +16,14 @@ export default defineConfig({
     },
   },
   server: {
-    port: 3000
-    // proxy: {
-    //   '/api': {
-    //     target: "",
-    //     changeOrigin: true,
-    //     rewrite: (path) => path.replace(/^\/api/, ''),
-    //   },
-    // },
+    port: 3000,
+    proxy: {
+      '/api': {
+        target: "http://dev.bewatec.com.cn:8000",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
 
   },
   build: {

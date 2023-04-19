@@ -9,7 +9,7 @@ import { useDateFormat, useNow } from "@vueuse/core";
 import dayjs from 'dayjs';
 
 import { Expand, Fold } from '@element-plus/icons-vue';
-
+import {getVerification,login}from '@/api/auth'
 
 const router = useRouter();
 const buttonClick = () => {
@@ -72,7 +72,17 @@ const messageClick = () => {
 }
 //当前时间
 const NowTime = useDateFormat(useNow(), "YYYY-MM-DD HH:mm:ss ");
+const get =()=>{
 
+    getVerification().then(res=>{
+        console.log(res.data?.id);
+    })
+}
+const getError =()=>{
+    login({username:"Root",password:"!Bcs#123"}).then(res=>{
+        console.log(res);
+    })
+}
 </script>
 <template>
     <el-button type="primary" @click="buttonClick">123</el-button>
@@ -133,5 +143,13 @@ const NowTime = useDateFormat(useNow(), "YYYY-MM-DD HH:mm:ss ");
     </p>
     <p>
         <img src="@/assets/iconfont/images/empty.png" alt="">
+    </p>
+    <p>
+        <el-button type="primary" @click="get">
+            请求
+        </el-button>
+        <el-button type="primary" @click="getError">
+            错误请求
+        </el-button>
     </p>
 </template>
