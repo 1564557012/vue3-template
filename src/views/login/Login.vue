@@ -1,19 +1,20 @@
 <script setup lang="ts">
-import { useRouter } from "vue-router"
+import { useRouter } from 'vue-router';
+
 const router = useRouter();
 const buttonClick = () => {
-    router.push("/home")
-}
+	router.push('/home');
+};
 </script>
 <template>
-    <div class="aaa">
-        <el-button type="primary" @click="buttonClick">123</el-button>
-    </div>
+	<div class="aaa">
+		<el-button type="primary" @click="buttonClick">123</el-button>
+	</div>
 </template>
-<style scoped lang='scss'>
+<style scoped lang="scss">
 .aaa {
-    background-color: lightsalmon;
-    display: flex;
-    width: 100vw;
+	background-color: lightsalmon;
+	display: flex;
+	width: 100vw;
 }
 </style>

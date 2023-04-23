@@ -1,6 +1,5 @@
-export default{
-  home: {
-    title: '测试',
-  }
-}
- 
+export default {
+	home: {
+		title: '测试',
+	},
+};

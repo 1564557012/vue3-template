@@ -1,5 +1,5 @@
 export default {
-  home: {
-    title: 'test',
-  }
-}
+	home: {
+		title: 'test',
+	},
+};

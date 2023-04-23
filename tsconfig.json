@@ -6,13 +6,16 @@
     "moduleResolution": "Node",
     "strict": true,
     "jsx": "preserve",
+    "sourceMap": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
     "lib": [
       "ESNext",
-      "DOM"
+      "DOM",
+      "DOM.Iterable"
     ],
+    "types": ["vite/client"],
     "skipLibCheck": true,
     "noEmit": true,
     "baseUrl": ".",
