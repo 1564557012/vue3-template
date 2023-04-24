@@ -76,6 +76,7 @@ const getError = () => {
 		console.log(res);
 	});
 };
+console.log(import.meta.env.VITE_BASE_URL);
 </script>
 <template>
 	<el-button type="primary" @click="buttonClick">123</el-button>

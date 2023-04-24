@@ -43,7 +43,7 @@ const getIconName = computed(() => {
 	width: 100%;
 	height: 100%;
 	position: relative;
-	fill: currentColor;
+	fill: currentcolor;
 	vertical-align: -2px;
 }
 
